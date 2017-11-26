@@ -33,15 +33,14 @@ object tictactoeRunUI extends JFXApp {
   val clientActor = system.actorOf(Props(new ParticipantActor(frontWindowController , playWindowController)))
   var player = ""
   
-
   val myScene = new Scene(width = 400 , height = 400) {
       root = rootPane
-      
+    
   }
   
   val playScene = new Scene(width = 700 , height = 500) {
-      root = rootPane2
-      
+      root = rootPane2     
+    
   }
   
   stage = new PrimaryStage() {
@@ -50,7 +49,7 @@ object tictactoeRunUI extends JFXApp {
     
     onCloseRequest = handle {
       system.terminate() foreach {
-        case _ => Platform.exit()
+        case _ => Platform.exit()     
         
       }
     }
